@@ -19,21 +19,20 @@
     ↓
     ├── [차단] Speech, Music, Laughter 등 → 무시 (처리 안 함)
     │
-    ├── [YAMNet 직접 매핑 - 8개]
+    ├── [YAMNet 직접 매핑 - 7개]
     │   Bark(70)         → "개 짖음" 확정 → 서버 전송
     │   Baby cry(20)     → "아기 울음" 확정 → 서버 전송
-    │   Siren(390)       → "사이렌" 확정 → 서버 전송
     │   Water(282)       → "물 소리" 확정 → 서버 전송
     │   Knock(353)       → "노크 소리" 확정 → 서버 전송
     │   Doorbell(349)    → "초인종" 확정 → 서버 전송
     │   Shatter(437)     → "창문 깨지는 소리" 확정 → 서버 전송
     │   Ringtone(385)    → "휴대폰 벨소리" 확정 → 서버 전송
     │
-    ├── [2차 분류기로 넘김 - 3개]
-    │   Door(348), Beep(475) 등 관련 소리
+    ├── [2차 분류기로 넘김 - 4개]
+    │   Door(348), Beep(475), Siren(390) 등 관련 소리
     │       ↓
     │   ━━━ 2차: Hearo 분류기 ━━━
-    │       → "도어락" / "인터폰" / "가전제품" 판단
+    │       → "도어락" / "인터폰" / "가전제품" / "사이렌" 판단
     │       → threshold(90%) 이상이면 서버 전송
     │
     └── [기타] 위 어디에도 해당 안 됨 → 무시
@@ -78,20 +77,14 @@
 | 350 | Ding-dong | 초인종 |
 | 353 | Knock | 노크 소리 |
 | 354 | Tap | 노크 소리 |
-| 382 | Alarm | 사이렌 |
 | 384 | Telephone bell ringing | 휴대폰 벨소리 |
 | 385 | Ringtone | 휴대폰 벨소리 |
-| 389 | Alarm clock | 사이렌 |
-| 390 | Siren | 사이렌 |
-| 391 | Civil defense siren | 사이렌 |
-| 393 | Smoke detector, smoke alarm | 사이렌 |
-| 394 | Fire alarm | 사이렌 |
 | 435 | Glass | 창문 깨지는 소리 |
 | 437 | Shatter | 창문 깨지는 소리 |
 | 463 | Smash, crash | 창문 깨지는 소리 |
 | 464 | Breaking | 창문 깨지는 소리 |
 
-#### 2차 분류기로 넘기는 소리 (도어락/인터폰/가전 관련)
+#### 2차 분류기로 넘기는 소리 (도어락/인터폰/가전/사이렌 관련)
 
 | YAMNet 인덱스 | YAMNet 카테고리명 | 관련 Hearo 카테고리 |
 |--------------|------------------|-------------------|
@@ -117,11 +110,17 @@
 | 371 | Vacuum cleaner | 가전제품 |
 | 373 | Keys jangling | 도어락 |
 | 376 | Electric shaver, electric razor | 가전제품 |
+| 382 | Alarm | 사이렌 |
 | 383 | Telephone | 인터폰 |
 | 386 | Telephone dialing, DTMF | 인터폰 |
 | 387 | Dial tone | 인터폰 |
 | 388 | Busy signal | 인터폰 |
+| 389 | Alarm clock | 사이렌 |
+| 390 | Siren | 사이렌 |
+| 391 | Civil defense siren | 사이렌 |
 | 392 | Buzzer | 인터폰 |
+| 393 | Smoke detector, smoke alarm | 사이렌 |
+| 394 | Fire alarm | 사이렌 |
 | 395 | Foghorn | 사이렌 |
 | 396 | Whistle | 사이렌 |
 | 406 | Mechanical fan | 가전제품 |
@@ -161,4 +160,4 @@
 | 학습 데이터 | 수백만 개 (AudioSet) | ~300개 (직접 수집) |
 | 카테고리 수 | 521개 | 11개 |
 | 강점 | 범용 소리 구분 | 한국 가정음 특화 |
-| 담당 카테고리 | 8개 (직접 매핑) | 3개 (도어락, 인터폰, 가전) |
+| 담당 카테고리 | 7개 (직접 매핑) | 4개 (도어락, 인터폰, 가전, 사이렌) |
