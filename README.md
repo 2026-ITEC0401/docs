@@ -173,6 +173,7 @@ Project/
 
 ## 📚 관련 자료
 
+- [KIPS ACK 2026 Hearo 최종 논문](./paper/kips-ack-2026/README.md)
 - [Hearo PRD](./Hearo_PRD.pdf)
 - [기존 YAMNet 학습 노트북](./yamnet_fine_tuning.ipynb)
 - [YAMNet v2 고도화 노트북](./yamnet_fine_tuning_v2.ipynb)
